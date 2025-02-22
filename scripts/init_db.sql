@@ -8,6 +8,9 @@ Script purpose:
 
 */
 
+BEGIN TRANSACTION;
+GO
+
 USE master;
 GO
 
@@ -35,3 +38,5 @@ GO
 
 CREATE SCHEMA gold;
 GO
+
+COMMIT;
