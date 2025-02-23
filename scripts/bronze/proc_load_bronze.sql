@@ -1,7 +1,7 @@
 USE Datawarehouse;
 GO
 
-CREATE OR ALTER PROCEDURE usp_load_data_into_bronze AS 
+CREATE OR ALTER PROCEDURE bronze.proc_load_bronze AS 
 BEGIN 
     TRUNCATE TABLE bronze.crm_cust_info
     BULK INSERT bronze.crm_cust_info
