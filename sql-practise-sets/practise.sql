@@ -8,3 +8,4 @@ FROM Emp
 ) as e
 WHERE e.rnk = 2
 
+  
