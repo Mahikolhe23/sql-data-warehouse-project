@@ -4,8 +4,8 @@ GO
 SELECT * FROM 
 (
     SELECT *, ROW_NUMBER() OVER(PARTITION BY salary ORDER BY salary DESC) as rnk
-FROM Emp 
-) as e
+    FROM Emp 
+) AS e
 WHERE e.rnk = 2
 
-  
+    
