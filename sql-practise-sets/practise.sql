@@ -8,4 +8,5 @@ SELECT * FROM
 ) AS e
 WHERE e.rnk = 2
 
-    
+
+SELECT * FROM stage_airport_data
