@@ -154,12 +154,25 @@ SELECT COUNT(*) hire_numbers, SUBSTRING(HIRE_DATE,3,6) as month FROM EMP GROUP B
 -- Determine the difference in salary between each employee and their manager.
 
 -- List employees whose email username (before @) matches their first or last name.
-SELECT * from #emp
-SELECT * from #dept
 
-SELECT * FROM #emp e
-join #dept d ON e.emp_id = d.emp_id 
-where  e.city = 'pune'
 
+
+/* PARTITIION FUNCTION*/
+CREATE PARTITION FUNCTION PartitionByYear(DATE)
+AS RANGE LEFT FOR VALUES('2023-12-31','2024-12-31','2025-12-31')
+
+/* FILE GROUPS FOR PARTITION */
+ALTER DATABASE Practise_db ADD FILEGROUP FG_2023;
+ALTER DATABASE Practise_db ADD FILEGROUP FG_2024;
+ALTER DATABASE Practise_db ADD FILEGROUP FG_2025;
+ALTER DATABASE Practise_db ADD FILEGROUP FG_2026;
+
+/* CREATE DATA FILES */
+
+
+SELECT * FROM sys.filegroups 
+SELECT * FROM sys.dm_db_fts_index_physical_stats
+
+SELECT * FROM INFORMATION_SCHEMA.TABLES
 
 
