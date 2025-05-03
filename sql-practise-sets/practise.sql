@@ -89,7 +89,7 @@ SELECT * FROM CTE WHERE salary_rnk < 4
 SELECT FIRST_NAME,LAST_NAME,COALESCE(HIRE_DATE,CAST('2020-01-01' AS DATE)) FROM Emp
 
 -- What indexes would you create on this table for performance improvement?
-CREATE INDEX idx_emp_emp_id ON emp(EMPLOYEE_ID)
+--CREATE INDEX idx_emp_emp_id ON emp(EMPLOYEE_ID)
 
 -- Alternate way using FETCH (SQL Server 2012+)
 SELECT * FROM emp ORDER BY salary DESC OFFSET 0 ROWS FETCH NEXT 3 ROWS ONLY;
@@ -175,4 +175,8 @@ SELECT * FROM sys.dm_db_fts_index_physical_stats
 
 SELECT * FROM INFORMATION_SCHEMA.TABLES
 
+
+SELECT * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'Emp'
+
+SELECT * from Emp where FIRST_NAME = 'Niku'
 
